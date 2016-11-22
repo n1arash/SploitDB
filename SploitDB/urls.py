@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from exploit import views
+
 
 urlpatterns = [
+    url(r'$^', views.index,name="index"),
     url(r'^exploit/', include('exploit.urls')),
     url(r'^admin/', admin.site.urls),
 ]
